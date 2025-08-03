@@ -1,0 +1,80 @@
+export const MOCK_PROPERTIES = [
+  {
+    id: '1',
+    title: 'Modern Downtown Apartment',
+    location: 'Downtown, City Center',
+    price: 450000,
+    type: 'Apartment',
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 1200,
+    description: 'Beautiful modern apartment in the heart of downtown with stunning city views. Features include hardwood floors, stainless steel appliances, and a private balcony.',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    features: ['Hardwood Floors', 'Stainless Steel Appliances', 'Private Balcony', 'City View', 'Gym Access']
+  },
+  {
+    id: '2',
+    title: 'Family Home with Garden',
+    location: 'Suburban Neighborhood',
+    price: 750000,
+    type: 'House',
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 2500,
+    description: 'Spacious family home with a beautiful garden and plenty of outdoor space. Perfect for families looking for comfort and privacy.',
+    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    features: ['Large Garden', 'Garage', 'Fireplace', 'Finished Basement', 'Deck']
+  },
+  {
+    id: '3',
+    title: 'Luxury Penthouse Suite',
+    location: 'Uptown District',
+    price: 1200000,
+    type: 'Penthouse',
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 1800,
+    description: 'Exclusive penthouse with panoramic views and luxury amenities. Includes private elevator access and rooftop terrace.',
+    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    features: ['Panoramic Views', 'Private Elevator', 'Rooftop Terrace', 'Wine Cellar', 'Smart Home System']
+  },
+  {
+    id: '4',
+    title: 'Cozy Studio Apartment',
+    location: 'Arts District',
+    price: 280000,
+    type: 'Studio',
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 650,
+    description: 'Charming studio apartment in the vibrant arts district. Perfect for young professionals or artists.',
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    features: ['Open Floor Plan', 'High Ceilings', 'Exposed Brick', 'Walk-in Closet', 'Community Garden']
+  },
+  {
+    id: '5',
+    title: 'Waterfront Condo',
+    location: 'Harbor District',
+    price: 850000,
+    type: 'Condo',
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 1400,
+    description: 'Stunning waterfront condo with boat dock access and marina views. Includes all modern amenities.',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    features: ['Waterfront View', 'Boat Dock Access', 'Marina', 'Pool', 'Fitness Center']
+  },
+  {
+    id: '6',
+    title: 'Historic Townhouse',
+    location: 'Old Town',
+    price: 650000,
+    type: 'Townhouse',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 1800,
+    description: 'Beautifully restored historic townhouse with original architectural details and modern updates.',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    features: ['Historic Architecture', 'Original Details', 'Modern Kitchen', 'Private Courtyard', 'Wine Cellar']
+  }
+]; 
