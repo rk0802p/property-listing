@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Save, X } from 'lucide-react';
+import { ArrowLeft, Save, X, Plus } from 'lucide-react';
 
 const AddPropertyForm = ({ onAddProperty, onCancel }) => {
   const [formData, setFormData] = useState({
@@ -22,7 +22,9 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
     'Condo',
     'Townhouse',
     'Penthouse',
-    'Studio'
+    'Studio',
+    'Villa',
+    'Office'
   ];
 
   const handleInputChange = (field, value) => {
@@ -74,24 +76,24 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-8">
         <button
           onClick={onCancel}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+          className="flex items-center gap-3 text-gray-600 hover:text-gray-900 transition-all duration-200 font-medium"
         >
           <ArrowLeft className="w-5 h-5" />
           Back to Properties
         </button>
-        <h1 className="text-2xl font-bold text-gray-900">Add New Property</h1>
+        <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Add New Property</h1>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Title */}
-          <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="lg:col-span-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Property Title *
             </label>
             <input
@@ -100,13 +102,13 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
               value={formData.title}
               onChange={(e) => handleInputChange('title', e.target.value)}
               placeholder="Enter property title"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
             />
           </div>
 
           {/* Location */}
-          <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="lg:col-span-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Location *
             </label>
             <input
@@ -115,13 +117,13 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
               value={formData.location}
               onChange={(e) => handleInputChange('location', e.target.value)}
               placeholder="Enter property location"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
             />
           </div>
 
           {/* Price */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Price (USD) *
             </label>
             <input
@@ -131,20 +133,20 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
               value={formData.price}
               onChange={(e) => handleInputChange('price', e.target.value)}
               placeholder="Enter price"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
             />
           </div>
 
           {/* Property Type */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Property Type *
             </label>
             <select
               required
               value={formData.type}
               onChange={(e) => handleInputChange('type', e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
             >
               <option value="">Select type</option>
               {propertyTypes.map(type => (
@@ -155,7 +157,7 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
 
           {/* Bedrooms */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Bedrooms *
             </label>
             <input
@@ -166,13 +168,13 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
               value={formData.bedrooms}
               onChange={(e) => handleInputChange('bedrooms', e.target.value)}
               placeholder="Number of bedrooms"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
             />
           </div>
 
           {/* Bathrooms */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Bathrooms *
             </label>
             <input
@@ -184,13 +186,13 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
               value={formData.bathrooms}
               onChange={(e) => handleInputChange('bathrooms', e.target.value)}
               placeholder="Number of bathrooms"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
             />
           </div>
 
           {/* Area */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Area (sq ft) *
             </label>
             <input
@@ -200,13 +202,13 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
               value={formData.area}
               onChange={(e) => handleInputChange('area', e.target.value)}
               placeholder="Property area"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
             />
           </div>
 
           {/* Description */}
-          <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="lg:col-span-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Description
             </label>
             <textarea
@@ -214,48 +216,49 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
               onChange={(e) => handleInputChange('description', e.target.value)}
               placeholder="Enter property description"
               rows="4"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
             />
           </div>
 
           {/* Features */}
-          <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="lg:col-span-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
               Features
             </label>
-            <div className="flex gap-2 mb-3">
+            <div className="flex gap-3 mb-4">
               <input
                 type="text"
                 value={newFeature}
                 onChange={(e) => setNewFeature(e.target.value)}
                 placeholder="Add a feature"
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="flex-1 px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-900"
                 onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddFeature())}
               />
               <button
                 type="button"
                 onClick={handleAddFeature}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-semibold flex items-center gap-2 shadow-lg"
               >
+                <Plus className="w-4 h-4" />
                 Add
               </button>
             </div>
             
             {/* Features List */}
             {formData.features.length > 0 && (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {formData.features.map((feature, index) => (
                   <span
                     key={index}
-                    className="flex items-center gap-1 bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                    className="flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-xl text-sm font-medium"
                   >
                     {feature}
                     <button
                       type="button"
                       onClick={() => handleRemoveFeature(feature)}
-                      className="text-gray-500 hover:text-gray-700"
+                      className="text-gray-500 hover:text-gray-700 transition-colors"
                     >
-                      <X className="w-3 h-3" />
+                      <X className="w-4 h-4" />
                     </button>
                   </span>
                 ))}
@@ -265,19 +268,19 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
         </div>
 
         {/* Form Actions */}
-        <div className="flex justify-end gap-4 mt-8 pt-6 border-t border-gray-200">
+        <div className="flex justify-end gap-4 mt-10 pt-8 border-t border-gray-200">
           <button
             type="button"
             onClick={onCancel}
-            className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+            className="px-8 py-4 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-all duration-200 font-semibold"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
+            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 flex items-center gap-3 font-semibold shadow-lg"
           >
-            <Save className="w-4 h-4" />
+            <Save className="w-5 h-5" />
             Add Property
           </button>
         </div>
