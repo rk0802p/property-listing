@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Save, X, Plus } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const AddPropertyForm = ({ onAddProperty, onCancel }) => {
+const AddPropertyForm = ({ onAddProperty }) => {
   const [formData, setFormData] = useState({
     title: '',
     location: '',
@@ -79,14 +80,17 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
     <div className="max-w-4xl mx-auto">
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
-        <button
-          onClick={onCancel}
-          className="flex items-center gap-3 text-[#4B5563] hover:text-[#111827] transition-all duration-200 font-medium"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          Back to Properties
-        </button>
-        <h1 className="text-4xl font-bold text-[#111827] tracking-tight">Add New Property</h1>
+        <div>
+          <Link
+            to="/properties"
+            className="inline-flex items-center space-x-2 text-[#4B5563] hover:text-[#111827] transition-colors duration-200 font-medium mb-2"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Properties</span>
+          </Link>
+          <h1 className="text-3xl font-bold text-[#111827]">Add New Property</h1>
+          <p className="text-[#4B5563] mt-2">Fill in the details below to list your property</p>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
@@ -269,21 +273,20 @@ const AddPropertyForm = ({ onAddProperty, onCancel }) => {
         </div>
 
         {/* Form Actions */}
-        <div className="flex justify-end gap-4 mt-10 pt-8 border-t border-gray-200">
-          <button
-            type="button"
-            onClick={onCancel}
-            className="px-8 py-4 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-all duration-200 font-semibold"
-          >
-            Cancel
-          </button>
+        <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-gray-200">
           <button
             type="submit"
-            className="px-8 py-4 bg-[#D4AF37] text-[#111827] rounded-xl hover:bg-[#B8941F] transition-all duration-200 flex items-center gap-3 font-semibold shadow-lg"
+            className="flex-1 bg-[#D4AF37] text-[#111827] py-4 px-8 rounded-xl hover:bg-[#B8941F] transition-all duration-200 flex items-center justify-center gap-3 font-semibold shadow-lg hover:shadow-xl"
           >
-            <Save className="w-5 h-5" />
+            <Plus className="w-5 h-5" />
             Add Property
           </button>
+          <Link
+            to="/properties"
+            className="flex-1 border border-gray-300 text-[#4B5563] py-4 px-8 rounded-xl hover:bg-gray-50 hover:text-[#111827] transition-all duration-200 flex items-center justify-center gap-3 font-semibold"
+          >
+            Cancel
+          </Link>
         </div>
       </form>
     </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { ArrowLeft, Bed, Bath, Square, MapPin, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const PropertyDetails = ({ property, onBack }) => {
+const PropertyDetails = ({ property }) => {
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -14,13 +15,15 @@ const PropertyDetails = ({ property, onBack }) => {
   return (
     <div className="max-w-4xl mx-auto">
       {/* Back Button */}
-      <button
-        onClick={onBack}
-        className="flex items-center gap-2 text-[#4B5563] hover:text-[#111827] mb-6 transition-colors"
-      >
-        <ArrowLeft className="w-5 h-5" />
-        Back to Properties
-      </button>
+      <div className="mb-8">
+        <Link
+          to="/properties"
+          className="inline-flex items-center space-x-2 text-[#4B5563] hover:text-[#111827] transition-colors duration-200 font-medium"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span>Back to Properties</span>
+        </Link>
+      </div>
 
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
         {/* Hero Image */}
