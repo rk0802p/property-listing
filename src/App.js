@@ -14,6 +14,8 @@ function App() {
   const [filters, setFilters] = useState({
     search: '',
     type: '',
+    location: '',
+    priceRange: '',
     minPrice: '',
     maxPrice: '',
     bedrooms: '',
@@ -62,12 +64,35 @@ function App() {
       const matchesSearch = property.title.toLowerCase().includes(filters.search.toLowerCase()) ||
                            property.location.toLowerCase().includes(filters.search.toLowerCase());
       const matchesType = !filters.type || property.type === filters.type;
+      const matchesLocation = !filters.location || property.location.includes(filters.location);
+      
+      // Handle price range filtering
+      let matchesPriceRange = true;
+      if (filters.priceRange) {
+        switch (filters.priceRange) {
+          case '0-500000':
+            matchesPriceRange = property.price < 500000;
+            break;
+          case '500000-1000000':
+            matchesPriceRange = property.price >= 500000 && property.price < 1000000;
+            break;
+          case '1000000-2000000':
+            matchesPriceRange = property.price >= 1000000 && property.price < 2000000;
+            break;
+          case '2000000+':
+            matchesPriceRange = property.price >= 2000000;
+            break;
+          default:
+            matchesPriceRange = true;
+        }
+      }
+      
       const matchesPrice = (!filters.minPrice || property.price >= parseInt(filters.minPrice)) &&
                           (!filters.maxPrice || property.price <= parseInt(filters.maxPrice));
       const matchesBedrooms = !filters.bedrooms || property.bedrooms >= parseInt(filters.bedrooms);
       const matchesBathrooms = !filters.bathrooms || property.bathrooms >= parseInt(filters.bathrooms);
 
-      return matchesSearch && matchesType && matchesPrice && matchesBedrooms && matchesBathrooms;
+      return matchesSearch && matchesType && matchesLocation && matchesPriceRange && matchesPrice && matchesBedrooms && matchesBathrooms;
     });
   };
 

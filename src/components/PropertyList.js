@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropertyCard from './PropertyCard';
 import FilterControls from './FilterControls';
-import { Search, Filter, Grid, List } from 'lucide-react';
+import { Search, Filter, Grid, List, MapPin, DollarSign, Home } from 'lucide-react';
 
 const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) => {
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
@@ -28,27 +28,98 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
 
   return (
     <div className="space-y-8">
-      {/* Breadcrumbs */}
-      <div className="text-sm text-[#4B5563] mb-6 font-medium">
-        Home > Properties
+      {/* Elegant Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-bold text-[#111827] tracking-tight mb-4">
+          Discover Your Dream Property
+        </h1>
+        <p className="text-xl text-[#4B5563] font-light max-w-2xl mx-auto">
+          Explore our curated collection of premium properties in the most desirable locations
+        </p>
       </div>
 
-      {/* Header */}
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-        <div>
-          <h2 className="text-4xl font-bold text-[#111827] tracking-tight mb-2">All Properties</h2>
-          <p className="text-lg text-[#4B5563] font-light">
-            {sortedProperties.length} properties found
-          </p>
+      {/* Premium Filter Bar */}
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 mb-8">
+        <div className="flex flex-col lg:flex-row items-center gap-6">
+          {/* Quick Search */}
+          <div className="flex-1 relative">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#D4AF37]" />
+            <input
+              type="text"
+              placeholder="Search by location, property type..."
+              value={filters.search}
+              onChange={(e) => onFilterChange({ ...filters, search: e.target.value })}
+              className="w-full pl-12 pr-4 py-4 text-[#111827] border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent font-medium text-sm placeholder-[#9CA3AF]"
+            />
+          </div>
+
+          {/* Location Filter */}
+          <div className="relative">
+            <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#D4AF37]" />
+            <select
+              value={filters.location || ''}
+              onChange={(e) => onFilterChange({ ...filters, location: e.target.value })}
+              className="pl-12 pr-8 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent font-medium text-[#111827] bg-white appearance-none cursor-pointer"
+            >
+              <option value="">All Locations</option>
+              <option value="Los Angeles">Los Angeles</option>
+              <option value="Malibu">Malibu</option>
+              <option value="Santa Monica">Santa Monica</option>
+              <option value="San Diego">San Diego</option>
+              <option value="Beverly Hills">Beverly Hills</option>
+            </select>
+          </div>
+
+          {/* Price Range */}
+          <div className="relative">
+            <DollarSign className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#D4AF37]" />
+            <select
+              value={filters.priceRange || ''}
+              onChange={(e) => onFilterChange({ ...filters, priceRange: e.target.value })}
+              className="pl-12 pr-8 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent font-medium text-[#111827] bg-white appearance-none cursor-pointer"
+            >
+              <option value="">Any Price</option>
+              <option value="0-500000">Under $500K</option>
+              <option value="500000-1000000">$500K - $1M</option>
+              <option value="1000000-2000000">$1M - $2M</option>
+              <option value="2000000+">$2M+</option>
+            </select>
+          </div>
+
+          {/* Property Type */}
+          <div className="relative">
+            <Home className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#D4AF37]" />
+            <select
+              value={filters.type || ''}
+              onChange={(e) => onFilterChange({ ...filters, type: e.target.value })}
+              className="pl-12 pr-8 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent font-medium text-[#111827] bg-white appearance-none cursor-pointer"
+            >
+              <option value="">All Types</option>
+              <option value="House">House</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Condo">Condo</option>
+              <option value="Villa">Villa</option>
+              <option value="Penthouse">Penthouse</option>
+            </select>
+          </div>
+
+          {/* Search Button */}
+          <button className="bg-[#111827] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1F2937] transition-all duration-200 shadow-lg">
+            Search
+          </button>
         </div>
+      </div>
+
+      {/* View Toggle & Sort */}
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-8">
         <div className="flex items-center gap-4">
           {/* View Toggle */}
-          <div className="flex items-center bg-white rounded-xl shadow-lg border border-gray-200">
+          <div className="flex items-center bg-white rounded-xl shadow-sm border border-gray-200">
             <button 
               onClick={() => setViewMode('grid')}
               className={`p-3 transition-all duration-200 rounded-l-xl ${
                 viewMode === 'grid' 
-                  ? 'bg-[#111827] text-[#D4AF37] shadow-md' 
+                  ? 'bg-[#111827] text-[#D4AF37] shadow-sm' 
                   : 'text-[#4B5563] hover:text-[#111827] hover:bg-gray-50'
               }`}
             >
@@ -58,7 +129,7 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
               onClick={() => setViewMode('list')}
               className={`p-3 transition-all duration-200 rounded-r-xl ${
                 viewMode === 'list' 
-                  ? 'bg-[#111827] text-[#D4AF37] shadow-md' 
+                  ? 'bg-[#111827] text-[#D4AF37] shadow-sm' 
                   : 'text-[#4B5563] hover:text-[#111827] hover:bg-gray-50'
               }`}
             >
@@ -66,11 +137,18 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
             </button>
           </div>
           
-          {/* Sort Dropdown */}
+          {/* Results Count */}
+          <div className="text-[#4B5563] font-medium">
+            {sortedProperties.length} properties found
+          </div>
+        </div>
+
+        {/* Sort Dropdown */}
+        <div className="relative">
           <select 
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-6 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent font-medium text-[#111827] bg-white shadow-sm"
+            className="px-6 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent font-medium text-[#111827] bg-white shadow-sm appearance-none cursor-pointer pr-10"
           >
             <option value="default">Sort by (Default)</option>
             <option value="price-low-high">Price: Low to High</option>
@@ -81,14 +159,11 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
         </div>
       </div>
 
-      {/* Filter Controls */}
-      <FilterControls filters={filters} onFilterChange={onFilterChange} />
-
-      {/* Properties Display */}
+      {/* Properties Grid */}
       {sortedProperties.length > 0 ? (
         viewMode === 'grid' ? (
-          // Grid View
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
+          // Premium Grid View
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sortedProperties.map((property) => (
               <PropertyCard
                 key={property.id}
@@ -118,6 +193,15 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
           <p className="text-lg text-[#4B5563] font-light max-w-md mx-auto">
             Try adjusting your search criteria or filters to find more properties.
           </p>
+        </div>
+      )}
+
+      {/* Load More / Pagination */}
+      {sortedProperties.length > 0 && (
+        <div className="text-center pt-12">
+          <button className="bg-[#111827] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1F2937] transition-all duration-200 shadow-lg hover:shadow-xl">
+            Load More Properties
+          </button>
         </div>
       )}
     </div>

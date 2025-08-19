@@ -2,7 +2,7 @@ export const MOCK_PROPERTIES = [
   {
     id: '1',
     title: 'Villa Del Mar Retreat',
-    location: '72 Sunset Avenue, Los Angeles, California',
+    location: 'Los Angeles, California',
     price: 250000,
     type: 'Apartment',
     bedrooms: 4,
@@ -15,7 +15,7 @@ export const MOCK_PROPERTIES = [
   {
     id: '2',
     title: 'Sunset Heights Estate',
-    location: '123 Ocean Drive, Malibu, California',
+    location: 'Malibu, California',
     price: 613000,
     type: 'Villa',
     bedrooms: 3,
@@ -28,9 +28,9 @@ export const MOCK_PROPERTIES = [
   {
     id: '3',
     title: 'Coastal Serenity Cottage',
-    location: '456 Beach Road, Santa Monica, California',
+    location: 'Santa Monica, California',
     price: 528000,
-    type: 'Studio',
+    type: 'House',
     bedrooms: 4,
     bathrooms: 2,
     area: 2600,
@@ -41,9 +41,9 @@ export const MOCK_PROPERTIES = [
   {
     id: '4',
     title: 'Downtown Modern Loft',
-    location: '789 Arts District, Los Angeles, California',
+    location: 'Los Angeles, California',
     price: 280000,
-    type: 'Studio',
+    type: 'Apartment',
     bedrooms: 1,
     bathrooms: 1,
     area: 650,
@@ -54,7 +54,7 @@ export const MOCK_PROPERTIES = [
   {
     id: '5',
     title: 'Harbor View Condo',
-    location: '321 Marina Way, San Diego, California',
+    location: 'San Diego, California',
     price: 850000,
     type: 'Condo',
     bedrooms: 2,
@@ -67,9 +67,9 @@ export const MOCK_PROPERTIES = [
   {
     id: '6',
     title: 'Historic Townhouse',
-    location: 'Old Town',
+    location: 'Los Angeles, California',
     price: 650000,
-    type: 'Townhouse',
+    type: 'House',
     bedrooms: 3,
     bathrooms: 2,
     area: 1800,
@@ -80,7 +80,7 @@ export const MOCK_PROPERTIES = [
   {
     id: '7',
     title: 'Luxury Penthouse Suite',
-    location: '999 Skyline Drive, Beverly Hills, California',
+    location: 'Beverly Hills, California',
     price: 1200000,
     type: 'Penthouse',
     bedrooms: 3,
@@ -93,9 +93,9 @@ export const MOCK_PROPERTIES = [
   {
     id: '8',
     title: 'Modern Office Space',
-    location: '555 Business District, Los Angeles, California',
+    location: 'Los Angeles, California',
     price: 450000,
-    type: 'Office',
+    type: 'House',
     bedrooms: 2,
     bathrooms: 1,
     area: 1200,
