@@ -74,42 +74,27 @@ function App() {
   const selectedProperty = properties.find(p => p.id === selectedPropertyId);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter">
-      {/* Top Header Bar */}
-      <div className="bg-gray-800 text-white py-2">
-        <div className="max-w-[1920px] mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-green-500 rounded-sm"></div>
-              <span className="text-sm font-medium">envato market</span>
-            </div>
-            <button className="bg-green-500 text-white px-4 py-1 rounded-md text-sm font-semibold hover:bg-green-600 transition-colors">
-              Buy now
-            </button>
-          </div>
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-[#F8FAFC] font-inter">
       {/* Main Header */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div className="max-w-[1920px] mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg">
-                <Building2 className="w-7 h-7 text-white" />
+              <div className="w-10 h-10 bg-[#111827] rounded-lg flex items-center justify-center shadow-sm">
+                <Building2 className="w-6 h-6 text-[#D4AF37]" />
               </div>
-              <span className="text-3xl font-bold text-gray-900 tracking-tight">Luminor</span>
+              <span className="text-2xl font-bold text-[#111827] tracking-tight">Luminor</span>
             </div>
 
             {/* Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
               <button
                 onClick={() => setView('landing')}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   view === 'landing' 
-                    ? 'bg-blue-600 text-white shadow-lg' 
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'bg-[#111827] text-[#D4AF37]' 
+                    : 'text-[#4B5563] hover:bg-gray-50 hover:text-[#111827]'
                 }`}
               >
                 <Home className="w-4 h-4" />
@@ -117,22 +102,22 @@ function App() {
               </button>
               <button
                 onClick={() => setView('list')}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   view === 'list' 
-                    ? 'bg-blue-600 text-white shadow-lg' 
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'bg-[#111827] text-[#D4AF37]' 
+                    : 'text-[#4B5563] hover:bg-gray-50 hover:text-[#111827]'
                 }`}
               >
                 <Building2 className="w-4 h-4" />
                 <span>Properties</span>
               </button>
-              <button className="flex items-center space-x-2 px-6 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all duration-200">
+              <button className="flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium text-[#4B5563] hover:bg-gray-50 hover:text-[#111827] transition-all duration-200">
                 <span>Pages</span>
               </button>
-              <button className="flex items-center space-x-2 px-6 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all duration-200">
+              <button className="flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium text-[#4B5563] hover:bg-gray-50 hover:text-[#111827] transition-all duration-200">
                 <span>Blog</span>
               </button>
-              <button className="flex items-center space-x-2 px-6 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all duration-200">
+              <button className="flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium text-[#4B5563] hover:bg-gray-50 hover:text-[#111827] transition-all duration-200">
                 <Phone className="w-4 h-4" />
                 <span>Contact</span>
               </button>
@@ -142,7 +127,7 @@ function App() {
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => setView('add')}
-                className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:from-yellow-600 hover:to-orange-600 transition-all duration-200 flex items-center space-x-2 shadow-lg"
+                className="bg-[#D4AF37] text-[#111827] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#B8941F] transition-all duration-200 flex items-center space-x-2 shadow-sm"
               >
                 <Plus className="w-4 h-4" />
                 <span>Submit Property</span>
@@ -158,7 +143,7 @@ function App() {
           <LandingPage onViewProperties={() => setView('list')} />
         )}
         {view === 'list' && (
-          <div className="max-w-[1920px] mx-auto px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <PropertyList
               properties={getFilteredProperties()}
               filters={filters}
@@ -168,7 +153,7 @@ function App() {
           </div>
         )}
         {view === 'details' && selectedProperty && (
-          <div className="max-w-[1920px] mx-auto px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <PropertyDetails
               property={selectedProperty}
               onBack={handleBackToList}
@@ -176,7 +161,7 @@ function App() {
           </div>
         )}
         {view === 'add' && (
-          <div className="max-w-[1920px] mx-auto px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <AddPropertyForm
               onAddProperty={handleAddProperty}
               onCancel={() => setView('list')}
@@ -189,9 +174,9 @@ function App() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center shadow-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 z-50"
+          className="fixed bottom-8 right-8 w-12 h-12 bg-[#111827] text-[#D4AF37] rounded-full flex items-center justify-center shadow-lg hover:bg-[#1F2937] transition-all duration-200 z-50"
         >
-          <ChevronUp className="w-6 h-6" />
+          <ChevronUp className="w-5 h-5" />
         </button>
       )}
     </div>

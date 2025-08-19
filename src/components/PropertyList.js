@@ -29,15 +29,15 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
   return (
     <div className="space-y-8">
       {/* Breadcrumbs */}
-      <div className="text-sm text-gray-500 mb-6 font-medium">
-        Home > With Top Map
+      <div className="text-sm text-[#4B5563] mb-6 font-medium">
+        Home > Properties
       </div>
 
       {/* Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
         <div>
-          <h2 className="text-4xl font-bold text-gray-900 tracking-tight mb-2">With Top Map</h2>
-          <p className="text-lg text-gray-600 font-light">
+          <h2 className="text-4xl font-bold text-[#111827] tracking-tight mb-2">All Properties</h2>
+          <p className="text-lg text-[#4B5563] font-light">
             {sortedProperties.length} properties found
           </p>
         </div>
@@ -48,8 +48,8 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
               onClick={() => setViewMode('grid')}
               className={`p-3 transition-all duration-200 rounded-l-xl ${
                 viewMode === 'grid' 
-                  ? 'bg-blue-600 text-white shadow-md' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  ? 'bg-[#111827] text-[#D4AF37] shadow-md' 
+                  : 'text-[#4B5563] hover:text-[#111827] hover:bg-gray-50'
               }`}
             >
               <Grid className="w-5 h-5" />
@@ -58,8 +58,8 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
               onClick={() => setViewMode('list')}
               className={`p-3 transition-all duration-200 rounded-r-xl ${
                 viewMode === 'list' 
-                  ? 'bg-blue-600 text-white shadow-md' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  ? 'bg-[#111827] text-[#D4AF37] shadow-md' 
+                  : 'text-[#4B5563] hover:text-[#111827] hover:bg-gray-50'
               }`}
             >
               <List className="w-5 h-5" />
@@ -70,7 +70,7 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
           <select 
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-6 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-700 bg-white shadow-sm"
+            className="px-6 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent font-medium text-[#111827] bg-white shadow-sm"
           >
             <option value="default">Sort by (Default)</option>
             <option value="price-low-high">Price: Low to High</option>
@@ -113,9 +113,9 @@ const PropertyList = ({ properties, filters, onFilterChange, onViewProperty }) =
         )
       ) : (
         <div className="text-center py-20">
-          <Filter className="w-16 h-16 text-gray-400 mx-auto mb-6" />
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">No properties found</h3>
-          <p className="text-lg text-gray-600 font-light max-w-md mx-auto">
+          <Filter className="w-16 h-16 text-[#4B5563] mx-auto mb-6" />
+          <h3 className="text-2xl font-bold text-[#111827] mb-4">No properties found</h3>
+          <p className="text-lg text-[#4B5563] font-light max-w-md mx-auto">
             Try adjusting your search criteria or filters to find more properties.
           </p>
         </div>

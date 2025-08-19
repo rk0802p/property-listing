@@ -47,14 +47,14 @@ const PropertyCard = ({ property, onViewProperty, viewMode = 'grid' }) => {
               <div className="flex-1">
                 {/* Price */}
                 <div className="mb-4">
-                  <span className="text-3xl font-bold text-gray-900">
+                  <span className="text-3xl font-bold text-[#111827]">
                     {formatPrice(property.price)}
                   </span>
                   <span className="text-gray-500 text-lg font-medium ml-2">/month</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                <h3 className="text-2xl font-bold text-[#111827] mb-3">
                   {property.title}
                 </h3>
                 
@@ -100,7 +100,7 @@ const PropertyCard = ({ property, onViewProperty, viewMode = 'grid' }) => {
                 {/* View Details Button */}
                 <button
                   onClick={() => onViewProperty(property.id)}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-8 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 flex items-center gap-3 font-semibold text-lg shadow-lg"
+                  className="bg-[#D4AF37] text-[#111827] py-4 px-8 rounded-xl hover:bg-[#B8941F] transition-all duration-200 flex items-center gap-3 font-semibold shadow-lg"
                 >
                   <Eye className="w-5 h-5" />
                   View Details
@@ -146,14 +146,14 @@ const PropertyCard = ({ property, onViewProperty, viewMode = 'grid' }) => {
       <div className="p-6">
         {/* Price */}
         <div className="mb-4">
-          <span className="text-2xl font-bold text-gray-900">
+          <span className="text-2xl font-bold text-[#111827]">
             {formatPrice(property.price)}
           </span>
           <span className="text-gray-500 text-base font-medium ml-2">/month</span>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-1">
+        <h3 className="text-xl font-bold text-[#111827] mb-3 line-clamp-1">
           {property.title}
         </h3>
         
@@ -194,7 +194,7 @@ const PropertyCard = ({ property, onViewProperty, viewMode = 'grid' }) => {
         {/* View Details Button */}
         <button
           onClick={() => onViewProperty(property.id)}
-          className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 flex items-center justify-center gap-3 font-semibold shadow-lg"
+          className="w-full bg-[#D4AF37] text-[#111827] py-4 px-6 rounded-xl hover:bg-[#B8941F] transition-all duration-200 flex items-center justify-center gap-3 font-semibold shadow-lg"
         >
           <Eye className="w-5 h-5" />
           View Details
@@ -204,4 +204,4 @@ const PropertyCard = ({ property, onViewProperty, viewMode = 'grid' }) => {
   );
 };
 
-export default PropertyCard; 
+export default PropertyCard;

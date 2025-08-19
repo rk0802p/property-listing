@@ -16,7 +16,7 @@ const PropertyDetails = ({ property, onBack }) => {
       {/* Back Button */}
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors"
+        className="flex items-center gap-2 text-[#4B5563] hover:text-[#111827] mb-6 transition-colors"
       >
         <ArrowLeft className="w-5 h-5" />
         Back to Properties
@@ -31,12 +31,12 @@ const PropertyDetails = ({ property, onBack }) => {
             className="w-full h-full object-cover"
           />
           <div className="absolute top-4 left-4">
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-medium">
+            <span className="bg-[#111827] text-[#D4AF37] px-3 py-1 rounded-md text-sm font-medium">
               {property.type}
             </span>
           </div>
           <div className="absolute top-4 right-4">
-            <span className="bg-white text-gray-900 px-3 py-1 rounded-md text-sm font-medium shadow-lg">
+            <span className="bg-white text-[#111827] px-3 py-1 rounded-md text-sm font-medium shadow-lg">
               {formatPrice(property.price)}
             </span>
           </div>
@@ -45,7 +45,7 @@ const PropertyDetails = ({ property, onBack }) => {
         <div className="p-8">
           {/* Header */}
           <div className="mb-6">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-3xl font-bold text-[#111827] mb-2">
               {property.title}
             </h1>
             <div className="flex items-center text-gray-600 mb-4">
@@ -57,39 +57,39 @@ const PropertyDetails = ({ property, onBack }) => {
           {/* Property Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
             <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-              <Bed className="w-6 h-6 text-blue-600 mr-3" />
+              <Bed className="w-6 h-6 text-[#D4AF37] mr-3" />
               <div>
-                <p className="text-sm text-gray-600">Bedrooms</p>
-                <p className="text-lg font-semibold text-gray-900">
+                <p className="text-sm text-[#4B5563]">Bedrooms</p>
+                <p className="text-lg font-semibold text-[#111827]">
                   {property.bedrooms}
                 </p>
               </div>
             </div>
             <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-              <Bath className="w-6 h-6 text-blue-600 mr-3" />
+              <Bath className="w-6 h-6 text-[#D4AF37] mr-3" />
               <div>
-                <p className="text-sm text-gray-600">Bathrooms</p>
-                <p className="text-lg font-semibold text-gray-900">
+                <p className="text-sm text-[#4B5563]">Bathrooms</p>
+                <p className="text-lg font-semibold text-[#111827]">
                   {property.bathrooms}
                 </p>
               </div>
             </div>
             <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-              <Square className="w-6 h-6 text-blue-600 mr-3" />
+              <Square className="w-6 h-6 text-[#D4AF37] mr-3" />
               <div>
-                <p className="text-sm text-gray-600">Area</p>
-                <p className="text-lg font-semibold text-gray-900">
+                <p className="text-sm text-[#4B5563]">Area</p>
+                <p className="text-lg font-semibold text-[#111827]">
                   {property.area} sq ft
                 </p>
               </div>
             </div>
             <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-              <div className="w-6 h-6 text-blue-600 mr-3 flex items-center justify-center">
+              <div className="w-6 h-6 text-[#D4AF37] mr-3 flex items-center justify-center">
                 <span className="text-lg font-bold">$</span>
               </div>
               <div>
-                <p className="text-sm text-gray-600">Price</p>
-                <p className="text-lg font-semibold text-gray-900">
+                <p className="text-sm text-[#4B5563]">Price</p>
+                <p className="text-lg font-semibold text-[#111827]">
                   {formatPrice(property.price)}
                 </p>
               </div>
@@ -98,7 +98,7 @@ const PropertyDetails = ({ property, onBack }) => {
 
           {/* Description */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Description</h2>
+            <h2 className="text-xl font-semibold text-[#111827] mb-4">Description</h2>
             <p className="text-gray-700 leading-relaxed">
               {property.description}
             </p>
@@ -106,7 +106,7 @@ const PropertyDetails = ({ property, onBack }) => {
 
           {/* Features */}
           <div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Features</h2>
+            <h2 className="text-xl font-semibold text-[#111827] mb-4">Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {property.features.map((feature, index) => (
                 <div key={index} className="flex items-center">
@@ -119,18 +119,18 @@ const PropertyDetails = ({ property, onBack }) => {
 
           {/* Contact Section */}
           <div className="mt-8 pt-8 border-t border-gray-200">
-            <div className="bg-blue-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-[#111827] mb-2">
                 Interested in this property?
               </h3>
               <p className="text-gray-600 mb-4">
                 Contact us for more information or to schedule a viewing.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                <button className="bg-[#D4AF37] text-[#111827] px-6 py-3 rounded-lg hover:bg-[#B8941F] transition-colors font-medium">
                   Contact Agent
                 </button>
-                <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors font-medium">
+                <button className="border border-[#D4AF37] text-[#D4AF37] px-6 py-3 rounded-lg hover:bg-[#D4AF37] hover:text-[#111827] transition-colors font-medium">
                   Schedule Viewing
                 </button>
               </div>
